@@ -1,123 +1,160 @@
-<index.html>
+<index. html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BAJA PROSERVICES | Tu Energía Solar en BCS</title>
+    <title>BAJA PROSERVICES | Energía Solar & Mantenimiento</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
     <style>
-        body { font-family: 'Montserrat', sans-serif; background-color: #f7f9fc; color: #1e3a5f; margin: 0; padding: 0; }
+        body { font-family: 'Montserrat', sans-serif; background-color: #f8fafc; color: #1e3a5f; margin: 0; padding: 0; }
         
-        /* Imagen HERO superior (hero.png) */
+        /* HERO SUPERIOR - hero.png */
         .hero-main { 
-            background-image: url('https://image-control.cortex.ai/api/v1/image/44547941-bd56-42d4-a15e-33431633535d'); 
+            background-image: linear-gradient(rgba(30, 58, 95, 0.4), rgba(30, 58, 95, 0.4)), url('hero.png'); 
             background-size: cover;
             background-position: center;
             height: 60vh;
             width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
-        .card-custom { background: white; border-radius: 1.5rem; box-shadow: 0 10px 30px rgba(0,0,0,0.05); border: 1px solid #e1e7f0; overflow: hidden; }
+        .card-custom { background: white; border-radius: 1.5rem; box-shadow: 0 10px 30px rgba(30, 58, 95, 0.08); border: 1px solid #e2e8f0; overflow: hidden; transition: all 0.3s ease; }
+        .card-custom:hover { transform: translateY(-5px); box-shadow: 0 20px 40px rgba(30, 58, 95, 0.12); }
+        
         .lang-btn.active { background-color: #facc15; color: #1e3a5f; font-weight: bold; border-color: #facc15; }
-        .btn-submit { background-color: #1e3a5f; color: white; transition: all 0.3s; }
-        .btn-submit:hover { background-color: #2c5282; transform: translateY(-2px); }
+        .btn-submit { background-color: #1e3a5f; color: white; transition: all 0.3s; cursor: pointer; }
+        .btn-submit:hover { background-color: #2c5282; }
 
-        /* Ajustes para móviles */
-        @media (max-width: 768px) { .hero-main { height: 40vh; } }
+        .promo-img-container { height: 300px; overflow: hidden; display: flex; align-items: center; justify-content: center; background: #fff; padding: 20px; }
+        .promo-img-container img { max-width: 100%; max-height: 100%; object-fit: contain; }
+
+        /* BOTÓN FLOTANTE WHATSAPP */
+        .whatsapp-float {
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            bottom: 40px;
+            right: 40px;
+            background-color: #25d366;
+            color: #FFF;
+            border-radius: 50px;
+            text-align: center;
+            font-size: 30px;
+            box-shadow: 2px 2px 10px rgba(0,0,0,0.2);
+            z-index: 100;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            background-color: #128c7e;
+        }
+
+        @media (max-width: 768px) { 
+            .hero-main { height: 40vh; } 
+            .promo-img-container { height: 200px; } 
+            .whatsapp-float { bottom: 20px; right: 20px; width: 50px; height: 50px; }
+        }
     </style>
 </head>
 <body>
 
+    <a href="https://wa.me/5216122198325" class="whatsapp-float" target="_blank">
+        <svg fill="#fff" width="35px" height="35px" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+    </a>
+
     <nav class="bg-white py-4 px-6 flex justify-between items-center shadow-sm sticky top-0 z-50">
-        <div class="font-900 text-2xl tracking-tighter text-blue-900">BAJA <span class="text-yellow-500">PROSERVICES</span></div>
+        <div class="font-900 text-2xl tracking-tighter text-blue-900">
+            BAJA <span class="text-yellow-500">PROSERVICES</span>
+        </div>
         <div class="flex gap-2">
-            <button onclick="setLanguage('es')" id="btn-es" class="lang-btn active px-3 py-1 border border-slate-300 rounded text-xs">ES</button>
-            <button onclick="setLanguage('en')" id="btn-en" class="lang-btn px-3 py-1 border border-slate-300 rounded text-xs">EN</button>
-            <button onclick="setLanguage('fr')" id="btn-fr" class="lang-btn px-3 py-1 border border-slate-300 rounded text-xs">FR</button>
+            <button onclick="setLanguage('es')" id="btn-es" class="lang-btn active px-3 py-1 border border-slate-300 rounded text-xs uppercase">ES</button>
+            <button onclick="setLanguage('en')" id="btn-en" class="lang-btn px-3 py-1 border border-slate-300 rounded text-xs uppercase">EN</button>
+            <button onclick="setLanguage('fr')" id="btn-fr" class="lang-btn px-3 py-1 border border-slate-300 rounded text-xs uppercase">FR</button>
         </div>
     </nav>
 
-    <div class="hero-main mb-10"></div>
+    <header class="hero-main">
+        <div class="text-center px-6">
+            <h1 class="text-white text-4xl md:text-6xl font-900 tracking-tighter uppercase drop-shadow-lg">
+                Baja <span class="text-yellow-400">Pro Services</span>
+            </h1>
+            <p id="promo-hero-subtitle" class="text-white text-xl md:text-2xl font-bold mt-2">Mexico's #1 Solar Company</p>
+        </div>
+    </header>
 
-    <main class="max-w-7xl mx-auto px-4 py-6">
-        
-        <div class="grid lg:grid-cols-3 gap-8 mb-16">
-            <div id="calculator" class="lg:col-span-2 card-custom p-8">
-                <div class="flex items-center gap-3 mb-6">
-                    <span class="text-3xl">🛠️</span>
-                    <h3 id="calc-header" class="text-xl font-bold">Configurador de Proyecto</h3>
-                </div>
-                <div class="space-y-6">
+    <main class="max-w-7xl mx-auto px-4 py-16">
+        <div class="grid lg:grid-cols-3 gap-10 mb-20">
+            <div id="calculator" class="lg:col-span-2 card-custom p-8 md:p-12 bg-white">
+                <h3 id="calc-header" class="text-2xl font-black text-blue-900 mb-8 flex items-center gap-3">⚙️ Configurador</h3>
+                <div class="space-y-8">
                     <div>
-                        <label id="label-step1" class="block text-sm font-bold text-slate-600 mb-2 uppercase"></label>
-                        <select id="serviceSelect" class="w-full border-2 border-slate-100 rounded-xl p-4 bg-slate-50 focus:border-yellow-500 outline-none transition"></select>
+                        <label id="label-step1" class="block text-xs font-900 text-slate-400 mb-3 uppercase tracking-widest">1. Servicio</label>
+                        <select id="serviceSelect" class="w-full border-2 border-slate-100 rounded-xl p-4 font-bold text-blue-900 outline-none"></select>
                     </div>
                     <div>
-                        <label id="label-step2" class="block text-sm font-bold text-slate-600 mb-2 uppercase"></label>
-                        <input type="text" id="smartCommand" class="w-full border-2 border-slate-200 rounded-xl p-5 text-2xl font-mono text-blue-600 placeholder-slate-300 focus:border-blue-500 outline-none text-center bg-white shadow-inner">
+                        <label id="label-step2" class="block text-xs font-900 text-slate-400 mb-3 uppercase tracking-widest">2. Comando Smart</label>
+                        <input type="text" id="smartCommand" placeholder="ej: 50 /m2" class="w-full border-2 border-slate-200 rounded-xl p-6 text-3xl font-mono text-blue-600 focus:border-blue-500 outline-none text-center bg-slate-50">
                     </div>
-                    <div id="resultBox" class="hidden bg-blue-50 p-6 rounded-2xl border border-blue-100 text-center animate-pulse">
-                        <span id="label-result" class="text-blue-400 text-xs font-black uppercase tracking-widest">Requerimiento Detectado</span>
-                        <div id="displayValue" class="text-4xl font-black mt-1 text-blue-800">---</div>
+                    <div id="resultBox" class="hidden bg-blue-900 p-8 rounded-2xl text-center">
+                        <span id="label-result" class="text-blue-300 text-xs font-black uppercase tracking-widest">Requerimiento</span>
+                        <div id="displayValue" class="text-4xl font-900 mt-2 text-white">---</div>
                     </div>
-                    <button onclick="sendToWhatsApp()" class="w-full btn-submit py-5 rounded-2xl font-black text-lg shadow-xl shadow-slate-200 uppercase tracking-widest">
+                    <button onclick="sendToWhatsApp()" class="w-full btn-submit py-6 rounded-xl font-black text-xl shadow-lg uppercase tracking-widest">
                         <span id="btn-text">Enviar a Cotización</span>
                     </button>
                 </div>
             </div>
 
             <div class="space-y-6">
-                <div class="card-custom p-6 bg-slate-900 text-white">
-                    <h4 class="font-bold text-yellow-500 mb-2">⚡ 10% OFF</h4>
-                    <p id="promo-text" class="text-sm text-slate-300">Válido en instalaciones solares hasta el 30 de Junio.</p>
-                </div>
-                <div class="card-custom p-6 border-l-4 border-l-yellow-500">
-                    <h4 id="cmd-list-title" class="font-bold mb-2 text-sm uppercase">Smart Commands</h4>
-                    <ul class="text-xs space-y-2 text-slate-600">
-                        <li><strong>/m2</strong>: Superficie</li>
-                        <li><strong>/m3</strong>: Volumen Albercas</li>
-                        <li><strong>/Btus</strong>: Aire Acondicionado</li>
-                        <li><strong>/qty</strong>: Cantidad Unidades</li>
-                    </ul>
+                <div class="card-custom p-8 bg-blue-900 text-white">
+                    <h4 class="font-900 text-yellow-400 text-2xl mb-2 uppercase italic">⚡ 10% OFF</h4>
+                    <p id="promo-text" class="text-blue-100 font-bold">Válido en instalaciones solares hasta el 30 de Junio.</p>
                 </div>
             </div>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 items-start">
-            
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div class="card-custom">
-                <img src="https://image-control.cortex.ai/api/v1/image/1d3889f0-705f-4091-a67b-11c5f35d72f1" alt="Promo 10%" class="w-full h-auto object-cover">
+                <div class="promo-img-container">
+                    <img src="promo10%.png" alt="Promo 10% PNG">
+                </div>
             </div>
-
-            <div class="card-custom border-2 border-yellow-500">
-                <img src="https://image-control.cortex.ai/api/v1/image/e7f05e10-98d3-4cbf-86b5-0d24f5f0949b" alt="Baja Pro Services" class="w-full h-auto object-cover">
+            <div class="card-custom border-2 border-yellow-500 shadow-xl">
+                <div class="promo-img-container">
+                    <img src="promotional.png" alt="Promotional PNG">
+                </div>
             </div>
-
             <div class="card-custom">
-                <img src="https://image-control.cortex.ai/api/v1/image/38b9a3ec-b0c3-46dd-96a2-cec46eaa40f2" alt="Mexico's #1 Solar Company" class="w-full h-auto object-cover">
+                <div class="promo-img-container">
+                    <img src="promo1.png" alt="Promo 1 PNG">
+                </div>
             </div>
-
         </div>
     </main>
 
-    <footer class="bg-white border-t py-10 text-center text-slate-400 text-xs mt-16">
-        &copy; 2026 BAJA PROSERVICES. Todos los derechos reservados.<br>
-        La Paz | Los Cabos | East Cape
+    <footer class="bg-white border-t py-12 text-center text-slate-400 text-xs">
+        <div class="font-900 text-blue-900 text-lg mb-2 uppercase">Baja ProServices</div>
+        &copy; 2026 Todos los derechos reservados.
     </footer>
 
     <script>
-        // Lógica de traducción y funcionalidad (mantenida del original)
         const servicesList = {
-            es: ['Mantenimiento A/C', 'Instalación A/C', 'Pintura', 'Impermeabilización', 'Pisos', 'Reparaciones Eléctricas', 'Instalaciones Nuevas', 'Plomería', 'Cámaras CCTV', 'Cerco Eléctrico', 'Aluminio', 'Herrería', 'Tablaroca', 'Carpintería', 'Persianas', 'Fugas', 'Boilers', 'Mantenimiento General', 'Paneles Solares', 'Limpieza', 'Película de Seguridad'],
-            en: ['A/C Maintenance', 'A/C Installation', 'Painting', 'Waterproofing', 'Flooring', 'Electrical Repairs', 'New Installations', 'Plumbing', 'CCTV', 'Electric Fence', 'Aluminum', 'Metal Works', 'Drywall', 'Carpentry', 'Blinds', 'Leak Repair', 'Water Heaters', 'General Maintenance', 'Solar Panels', 'Cleaning', 'Security Film'],
-            fr: ['Entretien climatisation', 'Installation climatisation', 'Peinture', 'Imperméabilisation', 'Revêtement de sol', 'Réparations électriques', 'Nouvelles installations', 'Plomberie', 'Vidéosurveillance', 'Clôture électrique', 'Aluminium', 'Ferronnerie', 'Cloisons sèches', 'Menuiserie', 'Stores', 'Réparation de fuites', 'Chauffe-eau', 'Entretien général', 'Panneaux solaires', 'Nettoyage', 'Film de sécurité']
+            es: ['Paneles Solares', 'Mantenimiento A/C', 'Instalación A/C', 'Pintura', 'Impermeabilización', 'Cámaras CCTV', 'Película de Seguridad'],
+            en: ['Solar Panels', 'A/C Maintenance', 'A/C Installation', 'Painting', 'Waterproofing', 'CCTV', 'Security Film'],
+            fr: ['Panneaux Solaires', 'Entretien Clim', 'Installation Clim', 'Peinture', 'Étanchéité', 'CCTV', 'Film de Sécurité']
         };
 
         const translations = {
-            es: { title: "Servicios por Tipo", calcHeader: "Configurador de Proyecto", step1: "1. Selecciona el Servicio", step2: "2. Comando Smart (ej: 50 /m2)", btn: "Enviar a Cotización", promo: "Válido en instalaciones solares hasta el 30 de Junio.", result: "Requerimiento Detectado", placeholder: "ej: 50 /m2" },
-            en: { title: "Services by Type", calcHeader: "Project Configurator", step1: "1. Select Service", step2: "2. Smart Command (e.g: 50 /m2)", btn: "Submit to Quote Team", promo: "Valid on solar installations until June 30.", result: "Detected Requirement", placeholder: "e.g: 50 /m2" },
-            fr: { title: "Services par Type", calcHeader: "Configurateur de Projet", step1: "1. Sélectionner le service", step2: "2. Commande Smart (ex: 50 /m2)", btn: "Envoyer au Devis", promo: "Valable sur les installations solares jusqu'au 30 juin.", result: "Exigence Détectée", placeholder: "ex: 50 /m2" }
+            es: { title: "Servicios por Tipo", calcHeader: "Configurador", step1: "1. Servicio", step2: "2. Comando Smart", btn: "Enviar a Cotización", promo: "Válido en instalaciones solares hasta el 30 de Junio.", result: "Cálculo Detectado" },
+            en: { title: "Services by Type", calcHeader: "Project Configurator", step1: "1. Service", step2: "2. Smart Command", btn: "Submit to Quote", promo: "Valid on solar installations until June 30.", result: "Detected Requirement" },
+            fr: { title: "Services par Type", calcHeader: "Configurateur", step1: "1. Service", step2: "2. Commande Smart", btn: "Envoyer Devis", promo: "Valable jusqu'au 30 juin.", result: "Calcul Détecté" }
         };
 
         let currentLang = 'es';
@@ -131,7 +168,6 @@
             document.getElementById('btn-text').innerText = t.btn;
             document.getElementById('promo-text').innerText = t.promo;
             document.getElementById('label-result').innerText = t.result;
-            document.getElementById('smartCommand').placeholder = t.placeholder;
 
             const select = document.getElementById('serviceSelect');
             select.innerHTML = '';
@@ -163,10 +199,10 @@
         function sendToWhatsApp() {
             const serviceIndex = document.getElementById('serviceSelect').value;
             const command = input.value.trim();
-            if (!command) return alert("Por favor ingresa una cantidad y comando.");
+            if (!command) return alert("Ingresa un comando (ej: 50 /m2)");
             const serviceInSpanish = servicesList['es'][serviceIndex];
             const phone = "5216122198325";
-            const message = `*SOLICITUD BAJA PROSERVICES*\n\n*Servicio:* ${serviceInSpanish}\n*Métrica:* ${command}\n*Idioma:* ${currentLang.toUpperCase()}\n\nFavor de contactar para presupuesto.`;
+            const message = `*SOLICITUD BAJA PROSERVICES*\n\n*Servicio:* ${serviceInSpanish}\n*Métrica:* ${command}`;
             window.open(`https://wa.me/${phone}?text=${encodeURIComponent(message)}`, '_blank');
         }
 
