@@ -1,4 +1,4 @@
-<idex.html>
+<index.html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
@@ -8,29 +8,23 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
     <style>
         body { font-family: 'Montserrat', sans-serif; background-color: #f7f9fc; color: #1e3a5f; margin: 0; padding: 0; }
-        /* Hero 1: Imagen Atardecer (image_6.png) */
-        .hero-bg { 
-            background-image: url('https://image-control.cortex.ai/api/v1/image/1d3889f0-705f-4091-a67b-11c5f35d72f1'); /* image_6.png */
+        
+        /* Imagen HERO superior (hero.png) */
+        .hero-main { 
+            background-image: url('https://image-control.cortex.ai/api/v1/image/44547941-bd56-42d4-a15e-33431633535d'); 
             background-size: cover;
             background-position: center;
-            height: 50vh;
+            height: 60vh;
+            width: 100%;
         }
-        @media (max-width: 768px) { .hero-bg { height: 35vh; } }
-        /* Hero 2: Imagen Equipo (image_7.png) */
-        .promo-banner {
-            background-image: url('https://image-control.cortex.ai/api/v1/image/44547941-bd56-42d4-a15e-33431633535d'); /* image_7.png */
-            background-size: cover;
-            background-position: center;
-            height: 40vh;
-            border-radius: 1.5rem;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-        }
-        @media (max-width: 768px) { .promo-banner { height: 30vh; } }
-        .card-custom { background: white; border-radius: 1.5rem; box-shadow: 0 10px 30px rgba(0,0,0,0.05); border: 1px solid #e1e7f0; }
+
+        .card-custom { background: white; border-radius: 1.5rem; box-shadow: 0 10px 30px rgba(0,0,0,0.05); border: 1px solid #e1e7f0; overflow: hidden; }
         .lang-btn.active { background-color: #facc15; color: #1e3a5f; font-weight: bold; border-color: #facc15; }
         .btn-submit { background-color: #1e3a5f; color: white; transition: all 0.3s; }
         .btn-submit:hover { background-color: #2c5282; transform: translateY(-2px); }
-        .text-overlay { text-shadow: 0 2px 5px rgba(0,0,0,0.5); }
+
+        /* Ajustes para móviles */
+        @media (max-width: 768px) { .hero-main { height: 40vh; } }
     </style>
 </head>
 <body>
@@ -44,60 +38,32 @@
         </div>
     </nav>
 
-    <div class="hero-bg flex items-end justify-center text-white p-6 md:p-10">
-        </div>
+    <div class="hero-main mb-10"></div>
 
-    <main class="max-w-6xl mx-auto px-4 py-10">
-
-        <div class="mb-12 promo-banner flex items-center justify-center relative overflow-hidden">
-            <div class="absolute inset-0 bg-blue-900 bg-opacity-30"></div>
-            <div class="text-center max-w-xl z-10 px-6">
-                <h2 id="promo-hero-title" class="text-2xl md:text-3xl font-900 text-white tracking-tighter mb-1 uppercase text-overlay">BAJA PROSERVICES:</h2>
-                <p id="promo-hero-subtitle" class="text-lg md:text-xl font-bold text-yellow-500 text-overlay">Mexico's #1 Solar Company</p>
-                <button onclick="document.getElementById('calculator').scrollIntoView();" class="mt-4 bg-yellow-400 text-blue-900 py-3 px-6 rounded-full font-black text-sm uppercase shadow-lg shadow-yellow-500/30 hover:scale-105 transition-transform">
-                    <span id="promo-btn-text">SAVE 10% TODAY!</span>
-                </button>
-            </div>
-        </div>
-
-        <div class="text-center mb-12">
-            <h2 id="section-title" class="text-3xl font-bold text-slate-800 uppercase tracking-tight">Servicios por Tipo</h2>
-            <p id="section-subtitle" class="text-slate-500 mt-2">Calcula tus requerimientos técnicos al instante</p>
-        </div>
-
-        <div class="grid lg:grid-cols-3 gap-8">
-            
-            <div id="calculator" class="lg:col-span-2 card-custom p-8 scroll-mt-20">
+    <main class="max-w-7xl mx-auto px-4 py-6">
+        
+        <div class="grid lg:grid-cols-3 gap-8 mb-16">
+            <div id="calculator" class="lg:col-span-2 card-custom p-8">
                 <div class="flex items-center gap-3 mb-6">
                     <span class="text-3xl">🛠️</span>
                     <h3 id="calc-header" class="text-xl font-bold">Configurador de Proyecto</h3>
                 </div>
-
                 <div class="space-y-6">
                     <div>
                         <label id="label-step1" class="block text-sm font-bold text-slate-600 mb-2 uppercase"></label>
-                        <select id="serviceSelect" class="w-full border-2 border-slate-100 rounded-xl p-4 bg-slate-50 focus:border-yellow-500 outline-none transition">
-                        </select>
+                        <select id="serviceSelect" class="w-full border-2 border-slate-100 rounded-xl p-4 bg-slate-50 focus:border-yellow-500 outline-none transition"></select>
                     </div>
-
                     <div>
                         <label id="label-step2" class="block text-sm font-bold text-slate-600 mb-2 uppercase"></label>
-                        <input type="text" id="smartCommand" 
-                            class="w-full border-2 border-slate-200 rounded-xl p-5 text-2xl font-mono text-blue-600 placeholder-slate-300 focus:border-blue-500 outline-none text-center bg-white shadow-inner">
-                        <div class="flex justify-center gap-4 mt-3 text-[10px] font-bold text-slate-400 uppercase tracking-widest">
-                            <span>/m2</span> <span>/m3</span> <span>/Btus</span> <span>/qty</span>
-                        </div>
+                        <input type="text" id="smartCommand" class="w-full border-2 border-slate-200 rounded-xl p-5 text-2xl font-mono text-blue-600 placeholder-slate-300 focus:border-blue-500 outline-none text-center bg-white shadow-inner">
                     </div>
-
                     <div id="resultBox" class="hidden bg-blue-50 p-6 rounded-2xl border border-blue-100 text-center animate-pulse">
                         <span id="label-result" class="text-blue-400 text-xs font-black uppercase tracking-widest">Requerimiento Detectado</span>
                         <div id="displayValue" class="text-4xl font-black mt-1 text-blue-800">---</div>
                     </div>
-
                     <button onclick="sendToWhatsApp()" class="w-full btn-submit py-5 rounded-2xl font-black text-lg shadow-xl shadow-slate-200 uppercase tracking-widest">
                         <span id="btn-text">Enviar a Cotización</span>
                     </button>
-                    <p class="text-center text-[10px] text-slate-400 mt-4">WhatsApp: +52 1 612 219 8325</p>
                 </div>
             </div>
 
@@ -107,25 +73,41 @@
                     <p id="promo-text" class="text-sm text-slate-300">Válido en instalaciones solares hasta el 30 de Junio.</p>
                 </div>
                 <div class="card-custom p-6 border-l-4 border-l-yellow-500">
-                    <h4 id="cmd-list-title" class="font-bold mb-2">Smart Commands</h4>
-                    <ul class="text-xs space-y-3 text-slate-600">
-                        <li><strong>/m2</strong>: <span id="cmd-m2">Superficie Solar / Pisos</span></li>
-                        <li><strong>/m3</strong>: <span id="cmd-m3">Volumen Agua / Albercas</span></li>
-                        <li><strong>/Btus</strong>: <span id="cmd-btu">Capacidad A/C</span></li>
-                        <li><strong>/qty</strong>: <span id="cmd-qty">Cámaras / Unidades</span></li>
+                    <h4 id="cmd-list-title" class="font-bold mb-2 text-sm uppercase">Smart Commands</h4>
+                    <ul class="text-xs space-y-2 text-slate-600">
+                        <li><strong>/m2</strong>: Superficie</li>
+                        <li><strong>/m3</strong>: Volumen Albercas</li>
+                        <li><strong>/Btus</strong>: Aire Acondicionado</li>
+                        <li><strong>/qty</strong>: Cantidad Unidades</li>
                     </ul>
                 </div>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 items-start">
+            
+            <div class="card-custom">
+                <img src="https://image-control.cortex.ai/api/v1/image/1d3889f0-705f-4091-a67b-11c5f35d72f1" alt="Promo 10%" class="w-full h-auto object-cover">
+            </div>
+
+            <div class="card-custom border-2 border-yellow-500">
+                <img src="https://image-control.cortex.ai/api/v1/image/e7f05e10-98d3-4cbf-86b5-0d24f5f0949b" alt="Baja Pro Services" class="w-full h-auto object-cover">
+            </div>
+
+            <div class="card-custom">
+                <img src="https://image-control.cortex.ai/api/v1/image/38b9a3ec-b0c3-46dd-96a2-cec46eaa40f2" alt="Mexico's #1 Solar Company" class="w-full h-auto object-cover">
             </div>
 
         </div>
     </main>
 
-    <footer class="bg-white border-t py-10 text-center text-slate-400 text-xs mt-10">
+    <footer class="bg-white border-t py-10 text-center text-slate-400 text-xs mt-16">
         &copy; 2026 BAJA PROSERVICES. Todos los derechos reservados.<br>
         La Paz | Los Cabos | East Cape
     </footer>
 
     <script>
+        // Lógica de traducción y funcionalidad (mantenida del original)
         const servicesList = {
             es: ['Mantenimiento A/C', 'Instalación A/C', 'Pintura', 'Impermeabilización', 'Pisos', 'Reparaciones Eléctricas', 'Instalaciones Nuevas', 'Plomería', 'Cámaras CCTV', 'Cerco Eléctrico', 'Aluminio', 'Herrería', 'Tablaroca', 'Carpintería', 'Persianas', 'Fugas', 'Boilers', 'Mantenimiento General', 'Paneles Solares', 'Limpieza', 'Película de Seguridad'],
             en: ['A/C Maintenance', 'A/C Installation', 'Painting', 'Waterproofing', 'Flooring', 'Electrical Repairs', 'New Installations', 'Plumbing', 'CCTV', 'Electric Fence', 'Aluminum', 'Metal Works', 'Drywall', 'Carpentry', 'Blinds', 'Leak Repair', 'Water Heaters', 'General Maintenance', 'Solar Panels', 'Cleaning', 'Security Film'],
@@ -133,63 +115,9 @@
         };
 
         const translations = {
-            es: {
-                promoHeroSubtitle: "Mexico's #1 Solar Company",
-                promoBtnText: "¡AHORRA 10% HOY!",
-                title: "Servicios por Tipo",
-                subtitle: "Calcula tus requerimientos técnicos al instante",
-                calcHeader: "Configurador de Proyecto",
-                step1: "1. Selecciona el Servicio",
-                step2: "2. Comando Smart (Cantidad + Comando)",
-                result: "Requerimiento Detectado",
-                btn: "Enviar a Cotización",
-                placeholder: "ej: 50 /m2",
-                promo: "Válido en instalaciones solares hasta el 30 de Junio.",
-                cmdTitle: "Comandos Smart",
-                m2: "Superficie Solar / Pisos",
-                m3: "Volumen Agua / Albercas",
-                btu: "Capacidad A/C",
-                qty: "Cámaras / Unidades",
-                alert: "Por favor ingresa un valor y comando (ej: 50 /m2)"
-            },
-            en: {
-                promoHeroSubtitle: "Mexico's #1 Solar Company",
-                promoBtnText: "SAVE 10% TODAY!",
-                title: "Services by Type",
-                subtitle: "Calculate your technical requirements instantly",
-                calcHeader: "Project Configurator",
-                step1: "1. Select Service",
-                step2: "2. Smart Command (Qty + Command)",
-                result: "Detected Requirement",
-                btn: "Submit to Quote Team",
-                placeholder: "e.g: 50 /m2",
-                promo: "Valid on solar installations until June 30.",
-                cmdTitle: "Smart Commands",
-                m2: "Solar Surface / Flooring",
-                m3: "Water Volume / Pools",
-                btu: "A/C Capacity",
-                qty: "Cameras / Units",
-                alert: "Please enter a value and command (e.g: 50 /m2)"
-            },
-            fr: {
-                promoHeroSubtitle: "Mexico's #1 Solar Company",
-                promoBtnText: "ÉCONOMISEZ 10% AUJOURD'HUI!",
-                title: "Services par Type",
-                subtitle: "Calculez vos besoins techniques instantanément",
-                calcHeader: "Configurateur de Projet",
-                step1: "1. Sélectionner le service",
-                step2: "2. Commande Smart (Qté + Commande)",
-                result: "Exigence Détectée",
-                btn: "Envoyer au Devis",
-                placeholder: "ex: 50 /m2",
-                promo: "Valable sur les installations solaires jusqu'au 30 juin.",
-                cmdTitle: "Commandes Smart",
-                m2: "Surface Solaire / Revêtement de sol",
-                m3: "Volume d'eau / Piscines",
-                btu: "Capacité A/C",
-                qty: "Caméras / Unités",
-                alert: "Veuillez entrer une valeur et une commande (ex: 50 /m2)"
-            }
+            es: { title: "Servicios por Tipo", calcHeader: "Configurador de Proyecto", step1: "1. Selecciona el Servicio", step2: "2. Comando Smart (ej: 50 /m2)", btn: "Enviar a Cotización", promo: "Válido en instalaciones solares hasta el 30 de Junio.", result: "Requerimiento Detectado", placeholder: "ej: 50 /m2" },
+            en: { title: "Services by Type", calcHeader: "Project Configurator", step1: "1. Select Service", step2: "2. Smart Command (e.g: 50 /m2)", btn: "Submit to Quote Team", promo: "Valid on solar installations until June 30.", result: "Detected Requirement", placeholder: "e.g: 50 /m2" },
+            fr: { title: "Services par Type", calcHeader: "Configurateur de Projet", step1: "1. Sélectionner le service", step2: "2. Commande Smart (ex: 50 /m2)", btn: "Envoyer au Devis", promo: "Valable sur les installations solares jusqu'au 30 juin.", result: "Exigence Détectée", placeholder: "ex: 50 /m2" }
         };
 
         let currentLang = 'es';
@@ -197,23 +125,13 @@
         function setLanguage(lang) {
             currentLang = lang;
             const t = translations[lang];
-            
-            document.getElementById('promo-hero-subtitle').innerText = t.promoHeroSubtitle;
-            document.getElementById('promo-btn-text').innerText = t.promoBtnText;
-            document.getElementById('section-title').innerText = t.title;
-            document.getElementById('section-subtitle').innerText = t.subtitle;
             document.getElementById('calc-header').innerText = t.calcHeader;
             document.getElementById('label-step1').innerText = t.step1;
             document.getElementById('label-step2').innerText = t.step2;
-            document.getElementById('label-result').innerText = t.result;
             document.getElementById('btn-text').innerText = t.btn;
-            document.getElementById('smartCommand').placeholder = t.placeholder;
             document.getElementById('promo-text').innerText = t.promo;
-            document.getElementById('cmd-list-title').innerText = t.cmdTitle;
-            document.getElementById('cmd-m2').innerText = t.m2;
-            document.getElementById('cmd-m3').innerText = t.m3;
-            document.getElementById('cmd-btu').innerText = t.btu;
-            document.getElementById('cmd-qty').innerText = t.qty;
+            document.getElementById('label-result').innerText = t.result;
+            document.getElementById('smartCommand').placeholder = t.placeholder;
 
             const select = document.getElementById('serviceSelect');
             select.innerHTML = '';
@@ -245,25 +163,14 @@
         function sendToWhatsApp() {
             const serviceIndex = document.getElementById('serviceSelect').value;
             const command = input.value.trim();
-            
-            if (!command) {
-                alert(translations[currentLang].alert);
-                return;
-            }
-
+            if (!command) return alert("Por favor ingresa una cantidad y comando.");
             const serviceInSpanish = servicesList['es'][serviceIndex];
             const phone = "5216122198325";
-            const message = `*SOLICITUD BAJA PROSERVICES*\n\n` +
-                            `*Servicio:* ${serviceInSpanish}\n` +
-                            `*Métrica:* ${command}\n` +
-                            `*Idioma:* ${currentLang.toUpperCase()}\n\n` +
-                            `Favor de contactar para presupuesto.`;
-
+            const message = `*SOLICITUD BAJA PROSERVICES*\n\n*Servicio:* ${serviceInSpanish}\n*Métrica:* ${command}\n*Idioma:* ${currentLang.toUpperCase()}\n\nFavor de contactar para presupuesto.`;
             window.open(`https://wa.me/${phone}?text=${encodeURIComponent(message)}`, '_blank');
         }
 
         setLanguage('es');
     </script>
 </body>
-
 </html>
